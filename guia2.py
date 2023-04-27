@@ -77,6 +77,8 @@
 
 # programaDeCalculo()
 
+# - - - - - - - - - - - - -
+
 # Ejercicio 5
 
 # Ingresar 10 valores, indicar para cada uno su paridad, y al final indicar cuántos pares y cuantos impares hubo.
@@ -105,6 +107,238 @@
 #   print("La cantidad de pares es de " + str(cantidadPares) + " y la cantidad de impares es " + str(cantidadImpares))
 
 # paridad()
+
+# - - - - - - - - - - - - -
+
+# Ejercicio 6
+
+# Generalizar el punto anterior para ingresar N valores, indicar de cada uno su # paridad, y al final indicar cuántos pares y cuantos impares hubo
+
+# def paridadN():
+#   lista = []
+#   listaDeParidad = []
+#   cantidadPares = 0
+#   cantidadImpares = 0
+
+#   print("ingresa la cantidad de valores")
+#   cantidadValores = int(input())
+
+#   for i in range(cantidadValores): 
+#     print("ingresa un valor")
+#     valor = int(input())
+#     lista.append(valor)
+  
+#   for valor in lista:
+#     if(valor % 2 == 0):
+#       listaDeParidad.append("Par")
+#       cantidadPares += 1
+#     else:
+#       listaDeParidad.append("Impar")
+#       cantidadImpares += 1
+  
+#   print(lista)
+#   print(listaDeParidad)
+#   print("La cantidad de pares es de " + str(cantidadPares) + " y la cantidad de impares es " + str(cantidadImpares))
+
+# paridadN()
+
+# - - - - - - - - - - - - -
+
+# Ejercicio 7
+
+# Ingresar 10 valores por teclado. Indicar cuál fue el mayor y cuál fue el menor
+
+# def minMax():
+#   lista = []
+#   min = None
+#   max = None
+
+#   for i in range(10): 
+#     print("ingresa un valor")
+#     valor = int(input())
+#     lista.append(valor)
+
+#   min = lista[0]
+#   max = lista[0]
+
+#   for valor in lista:
+#     if (valor > max):
+#       max = valor
+#     elif (valor < min):
+#       min = valor
+
+#   max = str(max)
+#   min = str(min) 
+
+#   print("el valor mayor es " + max + " y el valor menor es " + min)
+
+# minMax()
+
+# - - - - - - - - - - - - -
+
+# Ejercicio 8 
+
+# Indicar por teclado cuántos números deben ingresarse, ingresarlos y luego calcular
+# la suma y multiplicación de los mismos.
+
+# def sumaYmulti():
+#     lista = []
+#     suma = 0
+#     multi = 1
+
+#     print("ingresa una cantidad de valores")
+#     cantidadValores = int(input())
+
+#     for i in range(cantidadValores): 
+#         print("ingresa un valor")
+#         valor = int(input())
+#         lista.append(valor)
+
+#     for valor in lista:
+#         suma += valor
+#         multi *= valor
+
+#     suma = str(suma)
+#     multi = str(multi)
+    
+#     print('La suma total es de ' + suma + " y la multiplicación total es de " + multi)
+
+# sumaYmulti()
+
+# - - - - - - - - - - - - -
+
+# Ejercicio 9
+
+# Ingresar por teclado usuario y contraseña. Debe indicar si el usuario ingresado es
+# correcto o no.
+
+# def login():
+#     registeredUser = 'Ivan Consorte'
+#     registeredPassword = 'Open Sesame'
+
+#     print('Input a username')
+#     user = input()
+#     print('Input a password')
+#     password = input()
+
+#     if(user == registeredUser and password == registeredPassword):
+#         print ('Login succesful')
+#     elif(user != registeredUser):
+#         print ('The user doesn\'t exist')
+#     elif(user == registeredUser and password != registeredPassword):
+#         print ('Incorrect password')
+#     else:
+#         print ('Error')
+
+# login()
+
+# - - - - - - - - - - - - -
+
+# Ejercicio 10
+
+# Realizar un programa que solicite números y finalice al ingresar un valor 0. Al
+# terminar indicar la sumatoria total.
+
+# def sumaHasta():
+#     print('Ingrese un valor')
+#     numero = int(input())
+
+#     if (numero == 0):
+#         return 0
+    
+#     return numero + sumaHasta()
+
+# result = sumaHasta()
+
+# print(result)
+
+# - - - - - - - - - - - - -
+
+# Ejercicio 11
+
+# Realizá un programa que permita ingresar el monto mensual de ventas realizadas
+# por un comercio durante el año (un ingreso por mes). A su vez ingresar gasto por
+# mes. Calcular:
+# a) Facturación anual
+# b) Ganancia mensual
+# c) Ganancia promedio
+
+# def calculoGanancias():
+#     ventasMes = []
+#     gastosMes = []
+#     mesesDelAño = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
+
+#     for i in range(12):
+#         print ("Ingrese las ventas de " + mesesDelAño[i])
+#         ventas = int(input())
+#         ventasMes.append(ventas)
+#         print ("Ingrese los gastos de " + mesesDelAño[i])
+#         gastos = int(input())
+#         gastosMes.append(gastos)
+
+#     facturacionAnual = 0
+#     gananciaMensual = []
+#     gananciaAnual = 0
+
+#     for i in range (12):
+#       facturacionAnual += ventasMes[i]
+#       ganancia = ventasMes[i] - gastosMes[i]
+#       gananciaMensual.append(ganancia)
+
+#     for ganancia in gananciaMensual:
+#       gananciaAnual += ganancia
+    
+#     gananciaPromedio = gananciaAnual / 12
+
+#     print("")
+#     print ("La facturación anual es de " + str(facturacionAnual))
+#     print ("")
+#     for i in range(12):
+#         print ("La ganancia del mes de " + mesesDelAño[i] + " es de " + str(gananciaMensual[i]))
+#     print("")
+#     print("La ganancia promedio es de " + str(gananciaPromedio))
+
+# calculoGanancias()
+
+# Realizar una calculadora que permita ingresar dos valores y la operación a realizar y
+# brinde el resultado en pantalla. El programa no finaliza.
+
+# def calculadora():
+#     print("Ingrese el primer valor de la operación")
+#     valor1 = int(input())
+#     print("")
+
+#     print("Ingrese el segundo valor de la operación")
+#     valor2 = int(input())
+#     print("")
+
+#     print("Ingrese el tipo de operación")
+#     operación = input()
+#     print("")
+
+#     resultado = 0
+
+#     if(operación == "suma"):
+#       resultado = valor1 + valor2
+#     elif(operación == "resta"):
+#       resultado = valor1 - valor2
+#     elif(operación == "multiplicación"):
+#       resultado = valor1 * valor2
+#     elif(operación == "división"):
+#       resultado = valor1 / valor2
+#     else:
+#       print('operación inválida')
+#       return 0
+
+#     print('El resultado de la ' + operación + ' es de ' + str(resultado))
+
+#     calculadora()
+
+# calculadora()
+
+
+
+
     
 
   
