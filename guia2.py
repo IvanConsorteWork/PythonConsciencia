@@ -1,9 +1,10 @@
-#Ejercicio 1
+# Ejercicio 1
 
-#Ingresar un radio por teclado
-# radioIngresado = int(input()) #====> yo ingreso un radio. El radio queda declarado asi '55'. Y
-# #lo devuelve como 55
-# #  y avisar por consola si es positivo o negativo
+# Ingresar un radio por teclado
+# radioIngresado = int(input('Ingresa un radio')) 
+#====> yo ingreso un radio. El radio queda declarado asi '55'. Y
+#lo devuelve como 55
+#  y avisar por consola si es positivo o negativo
 # if radioIngresado < 0:
 #     print ("el radio es negativo")
 # elif radioIngresado > 0:
@@ -17,7 +18,7 @@
 
 # Ingresar el radio de un círculo. 
 
-# radioIngresado = int(input());
+# radioIngresado = float(input())
  
 # # Indicar en consola su perímetro y superficie.
 
@@ -53,14 +54,10 @@
 # Solicitar la carga por teclado del nombre de cada socio, su capital aportado y a partir de esto calcular e informar lo requerido previamente.
 
 # def programaDeCalculo ():
-#     print("ingresar el aporte de la primer persona")
-#     aportePersona1 = int(input())
-#     print("ingresar el aporte de la segunda persona")
-#     aportePersona2 = int(input())
-#     print("ingresar el aporte de la tercera persona")
-#     aportePersona3 = int(input())
-#     print("ingresar el aporte de la cuarta persona")
-#     aportePersona4 = int(input())
+#     aportePersona1 = float(input("ingresar el aporte de la primer persona"))
+#     aportePersona2 = float(input("ingresar el aporte de la segunda persona"))
+#     aportePersona3 = float(input("ingresar el aporte de la tercera persona"))
+#     aportePersona4 = float(input("ingresar el aporte de la cuarta persona"))
 
 #     suma = aportePersona1 + aportePersona2 + aportePersona3 + aportePersona4    
 
@@ -89,7 +86,7 @@
 #   cantidadPares = 0
 #   cantidadImpares = 0
 
-#   for i in range(10): 
+#   for _ in range(10): 
 #     print("ingresa un valor")
 #     valor = int(input())
 #     lista.append(valor)
@@ -182,26 +179,26 @@
 # la suma y multiplicación de los mismos.
 
 # def sumaYmulti():
-#     lista = []
-#     suma = 0
-#     multi = 1
+    # lista = [] #[1, 2, 3, 4, 5]
+    # suma = 0
+    # multi = 1
 
-#     print("ingresa una cantidad de valores")
-#     cantidadValores = int(input())
+    # print("ingresa una cantidad de valores")
+    # cantidadValores = int(input()) 
 
-#     for i in range(cantidadValores): 
-#         print("ingresa un valor")
-#         valor = int(input())
-#         lista.append(valor)
+    # for _ in range(cantidadValores): 
+    #     print("ingresa un valor")
+    #     valor = int(input())
+    #     lista.append(valor)
 
-#     for valor in lista:
-#         suma += valor
-#         multi *= valor
+    # for valor in lista:
+    #     suma += valor
+    #     multi *= valor
 
-#     suma = str(suma)
-#     multi = str(multi)
-    
-#     print('La suma total es de ' + suma + " y la multiplicación total es de " + multi)
+    # suma = str(suma)
+    # multi = str(multi)
+
+    # print('La suma total es de ' + suma + " y la multiplicación total es de " + multi)
 
 # sumaYmulti()
 
@@ -317,6 +314,8 @@
 #     print("")
 
 #     resultado = 0
+
+   
 
 #     if(operación == "suma"):
 #       resultado = valor1 + valor2
