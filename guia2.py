@@ -147,8 +147,6 @@
 
 # def minMax():
 #   lista = []
-#   min = None
-#   max = None
 
 #   for i in range(10): 
 #     print("ingresa un valor")
