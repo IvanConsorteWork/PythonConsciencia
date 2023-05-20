@@ -1,49 +1,53 @@
 # Ejercicio 1
 
-# Ingresar un radio por teclado
-# radioIngresado = int(input('Ingresa un radio')) 
-#====> yo ingreso un radio. El radio queda declarado asi '55'. Y
-#lo devuelve como 55
-#  y avisar por consola si es positivo o negativo
-# if radioIngresado < 0:
-#     print ("el radio es negativo")
-# elif radioIngresado > 0:
-#     print ("el radio es positivo")
-# else:
-#     print ("el radio es 0")
+# Ingresar un valor por teclado y avisar por consola si es positivo o negativo
+
+#%%
+
+valor_ingresado = int(input('Ingresa un valor \n>>> ')) 
+if valor_ingresado == 0:
+    print ("el radio es 0")
+elif valor_ingresado < 0:
+    print ("el radio es negativo")
+elif valor_ingresado > 0:
+    print ("el radio es positivo")
+else:
+    print ("error")
 
 # - - - - - - - - - - - - - 
 
 # Ejercicio 2
 
-# Ingresar el radio de un círculo. 
+# Ingresar el radio de un círculo. Indicar en consola su perímetro y superficie.
 
-# radioIngresado = float(input())
- 
-# # Indicar en consola su perímetro y superficie.
+#%%
 
-# superficie = 3.1415 * radioIngresado ** 2
+radio_ingresado = float(input('Ingrese el radio de un círculo \n>>> '))
 
-# perimetro = 3.1415 * (radioIngresado * 2)
+superficie = 3.1415 * radio_ingresado ** 2
 
-# print("Su perímetro es de " + str(perimetro) + " y su superficie es de " + str(superficie)) 
+perimetro = 3.1415 * (radio_ingresado * 2)
+
+print("Su perímetro es de " + str(perimetro) + " y su superficie es de " + str(superficie)) 
 
 # - - - - - - - - - - - - - 
 
 # Ejercicio 3
 
-# Ingresar un valor por teclado 
+# Ingresar un valor por teclado y avisar por consola si es par o impar
 
-# valorIngresado = int(input())
+#%%
 
-# y avisar por consola si es par o impar
+valorIngresado = int(input())
 
-# if valorIngresado == 0:
-#   print ("el resultado es 0")
-# elif valorIngresado % 2 == 0:
-#     print ("el resultado es par")
-# else:
-#     print ("el resultado es impar")
+if valorIngresado == 0:
+  print ("el resultado es 0")
+elif valorIngresado % 2 == 0:
+    print ("el resultado es par")
+elif valorIngresado % 2 == 1:
+    print ("el resultado es impar")
+else:
+    print("error")
 
 # - - - - - - - - - - - - -
 
@@ -53,26 +57,29 @@
 
 # Solicitar la carga por teclado del nombre de cada socio, su capital aportado y a partir de esto calcular e informar lo requerido previamente.
 
-# def programaDeCalculo ():
-#     aportePersona1 = float(input("ingresar el aporte de la primer persona"))
-#     aportePersona2 = float(input("ingresar el aporte de la segunda persona"))
-#     aportePersona3 = float(input("ingresar el aporte de la tercera persona"))
-#     aportePersona4 = float(input("ingresar el aporte de la cuarta persona"))
+#%%
 
-#     suma = aportePersona1 + aportePersona2 + aportePersona3 + aportePersona4    
+nombre_persona1 = input('ingresar el nombre del primer contribuyente \n>>> ')
+aporte_persona1 = float(input("ingresar el aporte del contribuyente \n>>> "))
+nombre_persona2 = input('ingresar el nombre del segundo contribuyente \n>>> ')
+aporte_persona2 = float(input("ingresar el aporte del contribuyente \n>>> "))
+nombre_persona3 = input('ingresar el nombre del tercer contribuyente \n>>> ')
+aporte_persona3 = float(input("ingresar el aporte del contribuyente \n>>> "))
+nombre_persona4 = input('ingresar el nombre del cuatro contribuyente \n>>> ')
+aporte_persona4 = float(input("ingresar el aporte del contribuyente \n>>> "))
 
-#     porcentajePersona1 = (suma * aportePersona1) / 100
-#     porcentajePersona2 = (suma * aportePersona2) / 100
-#     porcentajePersona3 = (suma * aportePersona3) / 100
-#     porcentajePersona4 = (suma * aportePersona4) / 100
+suma = aporte_persona1 + aporte_persona2 + aporte_persona3 + aporte_persona4    
 
-#     print ("La suma total es de $" + str(suma))
-#     print("El porcentaje del primer aporte es de " + str(porcentajePersona1) + "%") 
-#     print("El porcentaje del segundo aporte es de " + str(porcentajePersona2) + "%")
-#     print("El porcentaje del tercero aporte es de " + str(porcentajePersona3) + "%")
-#     print("El porcentaje del cuarto aporte es de " + str(porcentajePersona4) + "%")
+porcentaje_persona1 = str((aporte_persona1 * 100) / suma)
+porcentaje_persona2 = str((aporte_persona2 * 100) / suma)
+porcentaje_persona3 = str((aporte_persona3 * 100) / suma)
+porcentaje_persona4 = str((aporte_persona4 * 100) / suma)
 
-# programaDeCalculo()
+print ("La suma total es de $" + str(suma))
+print(f"El porcentaje que contribuyó {nombre_persona1} es del {porcentaje_persona1}%")
+print(f"El porcentaje que contribuyó {nombre_persona2} es del {porcentaje_persona2}%")
+print(f"El porcentaje que contribuyó {nombre_persona3} es del {porcentaje_persona3}%")
+print(f"El porcentaje que contribuyó {nombre_persona4} es del {porcentaje_persona4}%")
 
 # - - - - - - - - - - - - -
 
@@ -80,30 +87,22 @@
 
 # Ingresar 10 valores, indicar para cada uno su paridad, y al final indicar cuántos pares y cuantos impares hubo.
 
-# def paridad():
-#   lista = []
-#   listaDeParidad = []
-#   cantidadPares = 0
-#   cantidadImpares = 0
+#%%
 
-#   for _ in range(10): 
-#     print("ingresa un valor")
-#     valor = int(input())
-#     lista.append(valor)
-  
-#   for valor in lista:
-#     if(valor % 2 == 0):
-#       listaDeParidad.append("Par")
-#       cantidadPares += 1
-#     else:
-#       listaDeParidad.append("Impar")
-#       cantidadImpares += 1
-  
-#   print(lista)
-#   print(listaDeParidad)
-#   print("La cantidad de pares es de " + str(cantidadPares) + " y la cantidad de impares es " + str(cantidadImpares))
+numeros_pares = 0
+numeros_impares = 0
 
-# paridad()
+for i in range(10, 0, -1):
+  numero = int(input(f'Ingrese un valor (Le quedan por ingresar {str(i)} valores \n>>> '))
+  if numero % 2 == 0:
+    numeros_pares += 1
+  elif numero % 2 == 1:
+    numeros_impares += 1
+  else: 
+    print('Ingreso inválido, vuelva a intentarlo')
+    i += 1
+
+print(f"Se ingreso un total de {numeros_pares} números pares y {numeros_impares} números impares")
 
 # - - - - - - - - - - - - -
 
@@ -111,33 +110,23 @@
 
 # Generalizar el punto anterior para ingresar N valores, indicar de cada uno su # paridad, y al final indicar cuántos pares y cuantos impares hubo
 
-# def paridadN():
-#   lista = []
-#   listaDeParidad = []
-#   cantidadPares = 0
-#   cantidadImpares = 0
+#%%
 
-#   print("ingresa la cantidad de valores")
-#   cantidadValores = int(input())
+numeros_pares = 0
+numeros_impares = 0
+numero_veces = int(input('Ingrese la cantidad de números a evaluar \n>>> '))
 
-#   for i in range(cantidadValores): 
-#     print("ingresa un valor")
-#     valor = int(input())
-#     lista.append(valor)
-  
-#   for valor in lista:
-#     if(valor % 2 == 0):
-#       listaDeParidad.append("Par")
-#       cantidadPares += 1
-#     else:
-#       listaDeParidad.append("Impar")
-#       cantidadImpares += 1
-  
-#   print(lista)
-#   print(listaDeParidad)
-#   print("La cantidad de pares es de " + str(cantidadPares) + " y la cantidad de impares es " + str(cantidadImpares))
+for i in range(numero_veces, 0, -1):
+  numero = int(input(f'Ingrese un valor (Le quedan por ingresar {str(i -1)} valores \n>>> '))
+  if numero % 2 == 0:
+    numeros_pares += 1
+  elif numero % 2 == 1:
+    numeros_impares += 1
+  else: 
+    print('Ingreso inválido, vuelva a intentarlo')
+    i += 1
 
-# paridadN()
+print(f"Se ingreso un total de {numeros_pares} números pares y {numeros_impares} números impares")
 
 # - - - - - - - - - - - - -
 
@@ -145,31 +134,21 @@
 
 # Ingresar 10 valores por teclado. Indicar cuál fue el mayor y cuál fue el menor
 
-# def minMax():
-#   lista = []
-#   min = None
-#   max = None
+#%%
 
-#   for i in range(10): 
-#     print("ingresa un valor")
-#     valor = int(input())
-#     lista.append(valor)
+valor_inicial = int(input('Ingrese un valor (le quedan 9 ingresos) \n>>> '))
+min = valor_inicial
+max = valor_inicial
 
-#   min = lista[0]
-#   max = lista[0]
+for i in range (9, 0, -1):
+  nuevo_valor = int(input(f'Ingrese un valor (le quedan {i -1} ingresos) \n>>> '))
+  if nuevo_valor < min:
+    min = nuevo_valor
+  elif nuevo_valor > max:
+    max = nuevo_valor
 
-#   for valor in lista:
-#     if (valor > max):
-#       max = valor
-#     elif (valor < min):
-#       min = valor
+print(f'El valor mínimo ingresado es de {min} y el valor máximo es de {max}')
 
-#   max = str(max)
-#   min = str(min) 
-
-#   print("el valor mayor es " + max + " y el valor menor es " + min)
-
-# minMax()
 
 # - - - - - - - - - - - - -
 
@@ -178,29 +157,20 @@
 # Indicar por teclado cuántos números deben ingresarse, ingresarlos y luego calcular
 # la suma y multiplicación de los mismos.
 
-# def sumaYmulti():
-    # lista = [] #[1, 2, 3, 4, 5]
-    # suma = 0
-    # multi = 1
+#%%
 
-    # print("ingresa una cantidad de valores")
-    # cantidadValores = int(input()) 
+numero_ingresos = int(input('Indique la cantidad de valores a ingresar \n>>> '))
+primer_ingreso = int(input('Ingrese el valor inicial'))
+suma = primer_ingreso
+multi = primer_ingreso
 
-    # for _ in range(cantidadValores): 
-    #     print("ingresa un valor")
-    #     valor = int(input())
-    #     lista.append(valor)
+for i in range(numero_ingresos - 1, 0, -1):
+  nuevo_ingreso = int(input(f'Ingrese otro valor (le quedan {i -1} ingresos \n>>> '))
+  suma += nuevo_ingreso
+  multi *= nuevo_ingreso
 
-    # for valor in lista:
-    #     suma += valor
-    #     multi *= valor
+print(f'La suma total es de {suma} y la multiplicación total es de {multi}')
 
-    # suma = str(suma)
-    # multi = str(multi)
-
-    # print('La suma total es de ' + suma + " y la multiplicación total es de " + multi)
-
-# sumaYmulti()
 
 # - - - - - - - - - - - - -
 
@@ -209,25 +179,22 @@
 # Ingresar por teclado usuario y contraseña. Debe indicar si el usuario ingresado es
 # correcto o no.
 
-# def login():
-#     registeredUser = 'Ivan Consorte'
-#     registeredPassword = 'Open Sesame'
+#%%
 
-#     print('Input a username')
-#     user = input()
-#     print('Input a password')
-#     password = input()
+registeredUser = 'Ivan Consorte'
+registeredPassword = 'Open Sesame'
 
-#     if(user == registeredUser and password == registeredPassword):
-#         print ('Login succesful')
-#     elif(user != registeredUser):
-#         print ('The user doesn\'t exist')
-#     elif(user == registeredUser and password != registeredPassword):
-#         print ('Incorrect password')
-#     else:
-#         print ('Error')
+user = input('Input a username \n>>> ')
+password = input('Input a password\n>>> ')
 
-# login()
+if(user == registeredUser and password == registeredPassword):
+    print ('Login succesful')
+elif(user != registeredUser):
+    print ('The user doesn\'t exist')
+elif(user == registeredUser and password != registeredPassword):
+    print ('Incorrect password')
+else:
+    print ('Error')
 
 # - - - - - - - - - - - - -
 
@@ -236,18 +203,15 @@
 # Realizar un programa que solicite números y finalice al ingresar un valor 0. Al
 # terminar indicar la sumatoria total.
 
-# def sumaHasta():
-#     print('Ingrese un valor')
-#     numero = int(input())
+#%%
 
-#     if (numero == 0):
-#         return 0
-    
-#     return numero + sumaHasta()
+valor = 1
+suma = 0
+while valor != 0:
+  valor = int(input('Ingrese un valor (este proceso finalizará cuando ingrese 0) \n>>> '))
+  suma += valor
 
-# result = sumaHasta()
-
-# print(result)
+print(f'La suma total es de {suma}')
 
 # - - - - - - - - - - - - -
 
@@ -260,80 +224,75 @@
 # b) Ganancia mensual
 # c) Ganancia promedio
 
-# def calculoGanancias():
-#     ventasMes = []
-#     gastosMes = []
-#     mesesDelAño = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
+#%%
 
-#     for i in range(12):
-#         print ("Ingrese las ventas de " + mesesDelAño[i])
-#         ventas = int(input())
-#         ventasMes.append(ventas)
-#         print ("Ingrese los gastos de " + mesesDelAño[i])
-#         gastos = int(input())
-#         gastosMes.append(gastos)
+ventas_enero = int(input('Ingrese el monto de ventas correspondiente a Enero \n>>> '))
+gastos_enero = int(input('Ingrese el gasto correspondiente a Enero \n>>> '))
 
-#     facturacionAnual = 0
-#     gananciaMensual = []
-#     gananciaAnual = 0
+ventas_febrero = int(input('Ingrese el monto de ventas correspondiente a Febrero \n>>> '))
+gastos_febrero = int(input('Ingrese el gasto correspondiente a Febrero \n>>> '))
 
-#     for i in range (12):
-#       facturacionAnual += ventasMes[i]
-#       ganancia = ventasMes[i] - gastosMes[i]
-#       gananciaMensual.append(ganancia)
+ventas_marzo = int(input('Ingrese el monto de ventas correspondiente a Marzo \n>>> '))
+gastos_marzo = int(input('Ingrese el gasto correspondiente a Marzo \n>>> '))
 
-#     for ganancia in gananciaMensual:
-#       gananciaAnual += ganancia
-    
-#     gananciaPromedio = gananciaAnual / 12
+ventas_abril = int(input('Ingrese el monto de ventas correspondiente a Abril \n>>> '))
+gastos_abril = int(input('Ingrese el gasto correspondiente a Abril \n>>> '))
 
-#     print("")
-#     print ("La facturación anual es de " + str(facturacionAnual))
-#     print ("")
-#     for i in range(12):
-#         print ("La ganancia del mes de " + mesesDelAño[i] + " es de " + str(gananciaMensual[i]))
-#     print("")
-#     print("La ganancia promedio es de " + str(gananciaPromedio))
+ventas_mayo = int(input('Ingrese el monto de ventas correspondiente a Mayo \n>>> '))
+gastos_mayo = int(input('Ingrese el gasto correspondiente a Mayo \n>>> '))
 
-# calculoGanancias()
+ventas_junio = int(input('Ingrese el monto de ventas correspondiente a Junio \n>>> '))
+gastos_junio = int(input('Ingrese el gasto correspondiente a Junio \n>>> '))
 
-# Realizar una calculadora que permita ingresar dos valores y la operación a realizar y
-# brinde el resultado en pantalla. El programa no finaliza.
+ventas_julio = int(input('Ingrese el monto de ventas correspondiente a Julio \n>>> '))
+gastos_julio = int(input('Ingrese el gasto correspondiente a Julio \n>>> '))
 
-# def calculadora():
-#     print("Ingrese el primer valor de la operación")
-#     valor1 = int(input())
-#     print("")
+ventas_agosto = int(input('Ingrese el monto de ventas correspondiente a Agosto \n>>> '))
+gastos_agosto = int(input('Ingrese el gasto correspondiente a Agosto \n>>> '))
 
-#     print("Ingrese el segundo valor de la operación")
-#     valor2 = int(input())
-#     print("")
+ventas_septiembre = int(input('Ingrese el monto de ventas correspondiente a Septiembre \n>>> '))
+gastos_septiembre = int(input('Ingrese el gasto correspondiente a Septiembre \n>>> '))
 
-#     print("Ingrese el tipo de operación")
-#     operación = input()
-#     print("")
+ventas_octubre = int(input('Ingrese el monto de ventas correspondiente a Octubre \n>>> '))
+gastos_octubre = int(input('Ingrese el gasto correspondiente a Octubre \n>>> '))
 
-#     resultado = 0
+ventas_noviembre = int(input('Ingrese el monto de ventas correspondiente a Noviembre \n>>> '))
+gastos_noviembre = int(input('Ingrese el gasto correspondiente a Noviembre \n>>> '))
 
-   
+ventas_diciembre = int(input('Ingrese el monto de ventas correspondiente a Diciembre \n>>> '))
+gastos_diciembre = int(input('Ingrese el gasto correspondiente a Diciembre \n>>> '))
 
-#     if(operación == "suma"):
-#       resultado = valor1 + valor2
-#     elif(operación == "resta"):
-#       resultado = valor1 - valor2
-#     elif(operación == "multiplicación"):
-#       resultado = valor1 * valor2
-#     elif(operación == "división"):
-#       resultado = valor1 / valor2
-#     else:
-#       print('operación inválida')
-#       return 0
+ganancia_total = ventas_enero + ventas_febrero + ventas_marzo
 
-#     print('El resultado de la ' + operación + ' es de ' + str(resultado))
+#TENGO QUE TERMINAR ESTO
 
-#     calculadora()
+# - - - - - - - - - - - - -
 
-# calculadora()
+# Ejercicio 12
+
+# Realizar una calculadora que permita ingresar dos valores y la operación a realizar y brinde el resultado en pantalla. El programa no finaliza.
+
+#%%  
+
+while True:
+  operación = input("Ingrese el tipo de operación \n>>> ")
+  valor1 = int(input("Ingrese el primer valor de la operación \n>>> "))
+  valor2 = int(input("Ingrese el segundo valor de la operación \n>>> "))  
+  resultado = 0 
+  
+  if(operación == "suma"):
+    resultado = valor1 + valor2
+  elif(operación == "resta"):
+    resultado = valor1 - valor2
+  elif(operación == "multiplicación"):
+    resultado = valor1 * valor2
+  elif(operación == "división"):
+    resultado = valor1 / valor2
+  else:
+    print('operación inválida')
+
+  print(f'El resultado de la {operación} es de {resultado}')
+
 
 
 
@@ -347,3 +306,5 @@
 
 
 
+
+# %%
