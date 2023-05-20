@@ -134,7 +134,8 @@ print(f"Se ingreso un total de {numeros_pares} números pares y {numeros_impares
 
 # Ingresar 10 valores por teclado. Indicar cuál fue el mayor y cuál fue el menor
 
-#%%
+# def minMax():
+#   lista = []
 
 valor_inicial = int(input('Ingrese un valor (le quedan 9 ingresos) \n>>> '))
 min = valor_inicial
