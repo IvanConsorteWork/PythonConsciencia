@@ -224,45 +224,21 @@ print(f'La suma total es de {suma}')
 
 #%%
 
-ventas_enero = int(input('Ingrese el monto de ventas correspondiente a Enero \n>>> '))
-gastos_enero = int(input('Ingrese el gasto correspondiente a Enero \n>>> '))
+import calendar
 
-ventas_febrero = int(input('Ingrese el monto de ventas correspondiente a Febrero \n>>> '))
-gastos_febrero = int(input('Ingrese el gasto correspondiente a Febrero \n>>> '))
+month_names = calendar.month_name[1:]
 
-ventas_marzo = int(input('Ingrese el monto de ventas correspondiente a Marzo \n>>> '))
-gastos_marzo = int(input('Ingrese el gasto correspondiente a Marzo \n>>> '))
+facturación_anual = 0
 
-ventas_abril = int(input('Ingrese el monto de ventas correspondiente a Abril \n>>> '))
-gastos_abril = int(input('Ingrese el gasto correspondiente a Abril \n>>> '))
+for month in month_names:
+  ventas_mes = round(float(input(f'Ingresar el monto de ventas del mes de {month} \n>>> ')), 2)
+  gastos_mes = round(float(input(f'Ingresar los gastos del mes de {month} \n>>> ')), 2)
+  ganancia_mensual = ventas_mes - gastos_mes
+  facturación_anual += ganancia_mensual
+  print(f'La ganancia del mes de {month} es de ${ganancia_mensual}')
 
-ventas_mayo = int(input('Ingrese el monto de ventas correspondiente a Mayo \n>>> '))
-gastos_mayo = int(input('Ingrese el gasto correspondiente a Mayo \n>>> '))
+print(f'La facturación anual es de ${facturación_anual} y la ganancia promedio es de ${facturación_anual / 12}')
 
-ventas_junio = int(input('Ingrese el monto de ventas correspondiente a Junio \n>>> '))
-gastos_junio = int(input('Ingrese el gasto correspondiente a Junio \n>>> '))
-
-ventas_julio = int(input('Ingrese el monto de ventas correspondiente a Julio \n>>> '))
-gastos_julio = int(input('Ingrese el gasto correspondiente a Julio \n>>> '))
-
-ventas_agosto = int(input('Ingrese el monto de ventas correspondiente a Agosto \n>>> '))
-gastos_agosto = int(input('Ingrese el gasto correspondiente a Agosto \n>>> '))
-
-ventas_septiembre = int(input('Ingrese el monto de ventas correspondiente a Septiembre \n>>> '))
-gastos_septiembre = int(input('Ingrese el gasto correspondiente a Septiembre \n>>> '))
-
-ventas_octubre = int(input('Ingrese el monto de ventas correspondiente a Octubre \n>>> '))
-gastos_octubre = int(input('Ingrese el gasto correspondiente a Octubre \n>>> '))
-
-ventas_noviembre = int(input('Ingrese el monto de ventas correspondiente a Noviembre \n>>> '))
-gastos_noviembre = int(input('Ingrese el gasto correspondiente a Noviembre \n>>> '))
-
-ventas_diciembre = int(input('Ingrese el monto de ventas correspondiente a Diciembre \n>>> '))
-gastos_diciembre = int(input('Ingrese el gasto correspondiente a Diciembre \n>>> '))
-
-ganancia_total = ventas_enero + ventas_febrero + ventas_marzo
-
-#TENGO QUE TERMINAR ESTO
 
 # - - - - - - - - - - - - -
 
@@ -290,19 +266,3 @@ while True:
     print('operación inválida')
 
   print(f'El resultado de la {operación} es de {resultado}')
-
-
-
-
-
-    
-
-  
-  
-
-
-
-
-
-
-# %%
