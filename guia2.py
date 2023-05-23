@@ -1,268 +1,570 @@
-# Ejercicio 1
+# Guía n° 2 - Tipos de datos
 
-# Ingresar un valor por teclado y avisar por consola si es positivo o negativo
+# Listas
+
+# Ejercicio N° 1
+
+# Crea una lista llamada "frutas" que contenga las siguientes frutas: manzana, banana, naranja y pera.
+
+# Imprime en pantalla la lista completa
 
 #%%
 
-valor_ingresado = int(input('Ingresa un valor \n>>> ')) 
-if valor_ingresado == 0:
-    print ("el radio es 0")
-elif valor_ingresado < 0:
-    print ("el radio es negativo")
-elif valor_ingresado > 0:
-    print ("el radio es positivo")
+frutas = ["manzana", "banana", "naranja", "pera"]
+
+print(frutas)
+
+# - - - - - - - - - - - - - -
+
+# Ejercicio N° 2
+
+# En base al ej 1
+
+# Accede al segundo elemento de la lista "frutas" e imprímelo en pantalla.
+
+#%%
+
+frutas = ["manzana", "banana", "naranja", "pera"]
+
+print(frutas[1])
+
+# - - - - - - - - - - - - - -
+
+# Ejercicio N° 3
+
+# En base al ej 1
+
+# Modifica el primer elemento de la lista "frutas" y cámbialo por "Cereza".
+
+# Imprime en pantalla la lista actualizada.
+# %%
+
+frutas = ["manzana", "banana", "naranja", "pera"]
+
+frutas[0] = "Cereza"
+
+print(frutas[0])
+
+# - - - - - - - - - - - - - -
+
+# Ejercicio N° 4
+
+# En base al ej 1
+
+# Agrega la fruta "sandía" al final de la lista "frutas" utilizando el método append().
+
+# Imprime en pantalla la lista actualizada.
+# %%
+
+frutas = ["manzana", "banana", "naranja", "pera"]
+
+frutas.append("sandía")
+
+print(frutas)
+
+# - - - - - - - - - - - - - -
+
+# Ejercicio N° 5
+
+# En base al ej 1
+
+# Elimina la fruta "naranja" de la lista "frutas" utilizando el método remove().
+
+# Imprime en pantalla la lista resultante.
+# %%
+
+frutas = ["manzana", "banana", "naranja", "pera"]
+
+frutas.remove('naranja')
+
+print(frutas)
+
+# - - - - - - - - - - - - - -
+
+# Ejercicio N° 6
+
+# Crea una lista de números llamada "numeros" con valores del 1 al 5.
+
+# Utiliza un bucle for para recorrer la lista e imprimir en pantalla cada número.
+# %%
+
+numeros = [1, 2, 3, 4, 5]
+
+for num in numeros:
+  print(num)
+
+# - - - - - - - - - - - - - -
+
+# Ejercicio N° 7
+
+# Crea una lista llamada "pares" con los números pares del 2 al 10.
+
+# Utiliza el método reverse() para invertir el orden de los elementos en la lista.
+
+# Utiliza el método sort() para ordenar la lista de forma ascendente.
+
+# Imprime en pantalla la lista resultante.
+# %%
+
+pares = [2, 4, 6, 8, 10]
+
+pares.reverse()
+
+print(pares)
+
+pares.sort()
+
+print(pares)
+
+# - - - - - - - - - - - - - -
+
+# Ejercicio N° 8
+
+# Crea una lista llamada "cuadrados" que contenga los cuadrados de los números del 1 al
+# 5.
+
+# Utiliza la comprensión de listas para generar la lista de forma concisa.
+
+# Imprime en pantalla la lista resultante.
+# %%
+
+cuadrados = [numeros * numeros for numeros in range (1, 6)]
+
+print(cuadrados)
+
+# - - - - - - - - - - - - - -
+
+# Ejercicio N° 9
+
+# Crea una lista llamada "nombres" con varios nombres de personas.
+
+# Pide al usuario que ingrese un nombre y verifica si está presente en la lista.
+
+# Muestra un mensaje en pantalla indicando si el nombre está o no en la lista.
+# %%
+
+nombres = ["Matias", "Jose", "Esteban"]
+
+nombre_ingresado = input('Ingrese un nombre \n>>>')
+
+if (nombre_ingresado in nombres):
+  print("El nombre se encuentra en la lista")
 else:
-    print ("error")
+  print("El nombre no se encuentra en la lista")
 
-# - - - - - - - - - - - - - 
+# - - - - - - - - - - - - - -
 
-# Ejercicio 2
+# Ejercicio N° 10
 
-# Ingresar el radio de un círculo. Indicar en consola su perímetro y superficie.
+# Crea una lista llamada "numeros" con valores del 1 al 10.
 
-#%%
+# Divide la lista en sublistas de tamaño 3 utilizando la técnica de slicing.
 
-radio_ingresado = float(input('Ingrese el radio de un círculo \n>>> '))
-
-superficie = 3.1415 * radio_ingresado ** 2
-
-perimetro = 3.1415 * (radio_ingresado * 2)
-
-print("Su perímetro es de " + str(perimetro) + " y su superficie es de " + str(superficie)) 
-
-# - - - - - - - - - - - - - 
-
-# Ejercicio 3
-
-# Ingresar un valor por teclado y avisar por consola si es par o impar
+# Imprime en pantalla las sublistas resultantes.
 
 #%%
 
-valorIngresado = int(input())
+numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-if valorIngresado == 0:
-  print ("el resultado es 0")
-elif valorIngresado % 2 == 0:
-    print ("el resultado es par")
-elif valorIngresado % 2 == 1:
-    print ("el resultado es impar")
+lista_resultante = []
+
+for i in range(0, len(numeros), 3):
+  lista_resultante.append(numeros[i:i+3])
+
+print(lista_resultante)
+
+# - - - - - - - - - - - - - -
+
+# Diccionarios
+
+# Ejercicio N° 1
+
+# Crea un diccionario llamado "alumno" que contenga las siguientes claves: "nombre", "edad" y "carrera". Asigna valores adecuados a cada clave.
+
+# Imprime en pantalla la información del alumno utilizando las claves del diccionario.
+# %%
+
+alumno = {
+  "nombre": "Ivan",
+  "edad": 29,
+  "carrera": "Data Science"
+}
+
+print(alumno["nombre"], alumno["edad"], alumno["carrera"])
+
+# - - - - - - - - - - - - - -
+
+# Ejercicio N° 2
+
+# Modifica el valor de la clave "edad" en el diccionario "alumno" y actualízalo con una nueva edad.
+
+# Imprime en pantalla la información actualizada del alumno.
+# %%
+
+alumno["edad"] = 27
+
+print(alumno["edad"])
+
+# - - - - - - - - - - - - - -
+
+# Ejercicio N° 3
+
+# Agrega una nueva entrada al diccionario "alumno" con la clave "universidad" y un valor correspondiente a la universidad en la que estudia.
+
+# Imprime en pantalla la información completa del alumno, incluyendo la nueva entrada.
+# %%
+
+alumno["universidad"] = 'asociacióno consciencia'
+
+print(alumno['universidad'])
+
+# - - - - - - - - - - - - - -
+
+# Ejercicio N° 4
+
+# Crea un diccionario llamado "calificaciones" que contenga las claves "matemáticas", "física" y "química", y asigna valores numéricos a cada una.
+
+# Utiliza un bucle para recorrer el diccionario e imprimir en pantalla cada clave y su respectivo valor.
+# %%
+
+calificaciones = {
+  "matematicas": 9,
+  "fisica": 7,
+  "quimica": 5
+}
+
+for materia, calificacion in calificaciones.items():
+  print(f'{materia}: {calificacion}')
+
+# - - - - - - - - - - - - - -
+
+# Ejercicio N° 5
+
+# En base al ej 4:
+
+# Elimina la entrada correspondiente a la clave "química" del diccionario "calificaciones".
+
+# Vuelve a recorrer el diccionario y muestra en pantalla las claves y valores restantes.
+# %%
+
+calificaciones = {
+  "matematicas": 9,
+  "fisica": 7,
+  "quimica": 5
+}
+
+calificaciones.pop("quimica")
+
+for materia, calificacion in calificaciones.items():
+  print(f'{materia}: {calificacion}')
+
+# - - - - - - - - - - - - - -
+
+# Ejercicio N° 6
+
+# En base al ej 4:
+
+# Utiliza el método keys() para obtener una lista de todas las claves del diccionario "calificaciones".
+
+# Utiliza el método values() para obtener una lista de todos los valores del diccionario.
+# %%
+
+calificaciones = {
+  "matematicas": 9,
+  "fisica": 7,
+  "quimica": 5
+}
+
+print(calificaciones.keys())
+
+print(calificaciones.values())
+
+# - - - - - - - - - - - - - -
+
+# Ejercicio N° 7
+
+# Crea un diccionario llamado "agenda" que contenga información de contactos.
+
+# Cada contacto debe ser representado por un diccionario con claves como "nombre", "teléfono" y "email".
+
+# Agrega al menos tres contactos al diccionario "agenda" y muestra la información de cada contacto en pantalla.
+# %%
+
+agenda = {
+  "contacto1": {
+    "nombre": "Ivan",
+    "telefono": 123123,
+    "emal": "Ivanconsorte@mail.com"
+  },
+  "contacto2": {
+    "nombre": "Yasmin",
+    "telefono": 345345,
+    "emal": "Yasmingomez@mail.com"
+  },
+  "contacto3": {
+    "nombre": "Martina",
+    "telefono": 678678,
+    "emal": "Martinapapina@mail.com"
+  },
+}
+
+for contacto in agenda:
+  print(agenda[contacto])
+
+# - - - - - - - - - - - - - -
+
+# Tuplas
+
+# Ejercicio N° 1
+
+# Crea una tupla llamada "meses" que contenga los nombres de los meses del año como elementos.
+
+# Imprime en pantalla la tupla completa.
+
+# %%
+
+meses = ("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",  "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre")
+
+print(meses)
+
+# - - - - - - - - - - - - - -
+
+# Ejercicio N° 2
+
+# En base al ej.1
+
+# Accede al tercer elemento de la tupla "meses" e imprímelo en pantalla.
+# %%
+
+meses = ("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",  "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre")
+
+print(meses[2])
+
+# - - - - - - - - - - - - - -
+
+# Ejercicio N° 3
+
+# Accede al último elemento de la tupla "meses" utilizando indexación negativa.
+
+# Imprime en pantalla el último elemento.
+# %%
+
+meses = ("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",  "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre")
+
+print(meses[-1])
+
+# - - - - - - - - - - - - - -
+
+# Ejercicio N° 4
+
+# Intenta asignar un nuevo valor a uno de los elementos de la tupla "meses" y observa el error que se produce.
+
+# Comenta el código erróneo y explica en un comentario por qué ocurre el error.
+# %%
+
+meses = ("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",  "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre")
+
+meses[0] = 'Abrete Sesamo' 
+
+# TypeError: 'tuple' object does not support item assignment
+
+# >>> Este error ocurre porque las tuplas son inmutables, no puede cambiarse su valor una vez está declarada
+
+# - - - - - - - - - - - - - -
+
+# Ejercicio N° 5
+
+# Crea dos tuplas llamadas "tupla1" y "tupla2" con diferentes elementos.
+
+# Concatena las dos tuplas y almacena el resultado en una nueva tupla llamada "tupla_concatenada".
+
+# Imprime en pantalla la tupla concatenada.
+# %%
+
+tupla1 = (1, 2, 3)
+
+tupla2 = (4, 5, 6)
+
+tupla_concatenada = tupla1 + tupla2
+
+print(tupla_concatenada)
+
+# - - - - - - - - - - - - - -
+
+# Ejercicio N° 6
+
+# Crea una tupla llamada "coordenadas" que contenga las coordenadas x, y, z de un punto en el espacio.
+
+# Utiliza el desempaquetado de tuplas para asignar cada valor de la tupla a variables individuales llamadas "x", "y" y "z".
+
+# Imprime en pantalla los valores de las variables.
+# %%
+
+coordenadas = (25, 45, 75)
+
+(x, y, z) = coordenadas
+
+print(x, y, z)
+
+# - - - - - - - - - - - - - -
+
+# Ejercicio N° 7
+
+# Crea una lista de tuplas llamada "alumnos" que contenga el nombre y la edad de varios estudiantes.
+
+# Utiliza un bucle para iterar sobre la lista de tuplas y mostrar en pantalla el nombre y la edad de cada estudiante.
+# %%
+
+alumnos = [("Ivan", 29), ("Yasmin", 29), ("Martina", 25)]
+
+for alumno in alumnos:
+  for datos in alumno:
+    print(datos)
+
+# - - - - - - - - - - - - - -
+
+# Sets
+
+# Ejercicio N° 1
+
+# Crea un conjunto llamado "frutas" que contenga las siguientes frutas: manzana, plátano, naranja y pera.
+
+# Imprime en pantalla el conjunto completo.
+# %%
+
+frutas = {"manzana", "plátano", "naranja", "pera"}
+
+print(frutas)
+
+# - - - - - - - - - - - - - -
+
+# Ejercicio N° 2
+
+# Crea dos conjuntos: "frutas1" con las frutas manzana, plátano y pera, y "frutas2" con las frutas naranja y sandía.
+
+# Realiza las siguientes operaciones e imprime los resultados:
+
+# Unión de los conjuntos frutas1 y frutas2.
+# Intersección de los conjuntos frutas1 y frutas2.
+# Diferencia entre los conjuntos frutas1 y frutas2.
+# %%
+
+frutas1 = {"manzana", "plátano", "pera"}
+frutas2 = {"naranja", "sandia"}
+
+union_frutas = frutas1.union(frutas2)
+print(union_frutas)
+
+intersección_frutas = frutas1.intersection(frutas2)
+print(intersección_frutas)
+
+differencia_frutas = frutas1.difference(frutas2)
+print(differencia_frutas)
+
+# - - - - - - - - - - - - - -
+
+# Ejercicio N° 3
+
+# Crea un conjunto vacío llamado "numeros". 
+
+# Agrega los números del 1 al 5 al conjunto utilizando el método add().
+
+# Elimina el número 3 del conjunto utilizando el método remove() o discard().
+
+# Imprime en pantalla el conjunto resultante.
+# %%
+
+numeros = set()
+
+for i in range(1, 6):
+  numeros.add(i)
+
+numeros.remove(3)
+
+print(numeros)
+
+# - - - - - - - - - - - - - -
+
+# Ejercicio N° 4
+
+# Crea un conjunto llamado "vocales" que contenga las vocales del alfabeto.
+
+# Pide al usuario que ingrese una letra y verifica si esa letra está presente en el conjunto "vocales".
+
+# Muestra un mensaje en pantalla indicando si la letra es una vocal o no.
+# %%
+
+vocales = {"a", "b", "c", "d", "e"}
+
+letra = input('Ingrese una letra \n>>> ')
+
+if letra in vocales:
+  print("La letra es una vocal")
 else:
-    print("error")
+  print("La letra no es una vocal")
 
-# - - - - - - - - - - - - -
+# - - - - - - - - - - - - - -
 
-# Ejercicio 4
+# Ejercicio N° 5
 
-# Realizá un programa que permita resolver el siguiente problema: Cuatro personas aportan diferente capital a una sociedad y desean saber el valor total aportado y qué porcentaje aportó cada una (indicando nombre y porcentaje). 
+# Crea una lista llamada "numeros_repetidos" que contenga números repetidos.
 
-# Solicitar la carga por teclado del nombre de cada socio, su capital aportado y a partir de esto calcular e informar lo requerido previamente.
+# Convierte la lista en un conjunto utilizando la función set() para eliminar los elementos duplicados.
 
-#%%
+# Convierte el conjunto resultante nuevamente en una lista y muéstrala en pantalla.
+# %%
 
-nombre_persona1 = input('ingresar el nombre del primer contribuyente \n>>> ')
-aporte_persona1 = float(input("ingresar el aporte del contribuyente \n>>> "))
-nombre_persona2 = input('ingresar el nombre del segundo contribuyente \n>>> ')
-aporte_persona2 = float(input("ingresar el aporte del contribuyente \n>>> "))
-nombre_persona3 = input('ingresar el nombre del tercer contribuyente \n>>> ')
-aporte_persona3 = float(input("ingresar el aporte del contribuyente \n>>> "))
-nombre_persona4 = input('ingresar el nombre del cuatro contribuyente \n>>> ')
-aporte_persona4 = float(input("ingresar el aporte del contribuyente \n>>> "))
+numeros_repetidos = [1, 1, 2, 2, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6]
 
-suma = aporte_persona1 + aporte_persona2 + aporte_persona3 + aporte_persona4    
+numeros_repetidos = set(numeros_repetidos)
 
-porcentaje_persona1 = str((aporte_persona1 * 100) / suma)
-porcentaje_persona2 = str((aporte_persona2 * 100) / suma)
-porcentaje_persona3 = str((aporte_persona3 * 100) / suma)
-porcentaje_persona4 = str((aporte_persona4 * 100) / suma)
+numeros_repetidos = list(numeros_repetidos)
 
-print ("La suma total es de $" + str(suma))
-print(f"El porcentaje que contribuyó {nombre_persona1} es del {porcentaje_persona1}%")
-print(f"El porcentaje que contribuyó {nombre_persona2} es del {porcentaje_persona2}%")
-print(f"El porcentaje que contribuyó {nombre_persona3} es del {porcentaje_persona3}%")
-print(f"El porcentaje que contribuyó {nombre_persona4} es del {porcentaje_persona4}%")
+print(numeros_repetidos)
 
-# - - - - - - - - - - - - -
+# - - - - - - - - - - - - - -
 
-# Ejercicio 5
+# Ejercicio N° 6
 
-# Ingresar 10 valores, indicar para cada uno su paridad, y al final indicar cuántos pares y cuantos impares hubo.
+# Crea dos conjuntos: "set1" con los números del 1 al 5, y "set2" con los números del 4 al 8. 
 
-#%%
+# Utiliza los métodos de conjuntos para realizar las siguientes operaciones e imprime los resultados:
 
-numeros_pares = 0
-numeros_impares = 0
+# Obtener la diferencia simétrica entre set1 y set2.
 
-for i in range(10, 0, -1):
-  numero = int(input(f'Ingrese un valor (Le quedan por ingresar {str(i)} valores \n>>> '))
-  if numero % 2 == 0:
-    numeros_pares += 1
-  elif numero % 2 == 1:
-    numeros_impares += 1
-  else: 
-    print('Ingreso inválido, vuelva a intentarlo')
-    i += 1
+# Comprobar si set1 es un subconjunto de set2.
 
-print(f"Se ingreso un total de {numeros_pares} números pares y {numeros_impares} números impares")
+# Comprobar si set2 es un subconjunto propio de set1.
+# %%
 
-# - - - - - - - - - - - - -
+set1 = set()
 
-# Ejercicio 6
+set2 = set()
 
-# Generalizar el punto anterior para ingresar N valores, indicar de cada uno su # paridad, y al final indicar cuántos pares y cuantos impares hubo
-
-#%%
-
-numeros_pares = 0
-numeros_impares = 0
-numero_veces = int(input('Ingrese la cantidad de números a evaluar \n>>> '))
-
-for i in range(numero_veces, 0, -1):
-  numero = int(input(f'Ingrese un valor (Le quedan por ingresar {str(i -1)} valores \n>>> '))
-  if numero % 2 == 0:
-    numeros_pares += 1
-  elif numero % 2 == 1:
-    numeros_impares += 1
-  else: 
-    print('Ingreso inválido, vuelva a intentarlo')
-    i += 1
-
-print(f"Se ingreso un total de {numeros_pares} números pares y {numeros_impares} números impares")
-
-# - - - - - - - - - - - - -
-
-# Ejercicio 7
-
-# Ingresar 10 valores por teclado. Indicar cuál fue el mayor y cuál fue el menor
-
-valor_inicial = int(input('Ingrese un valor (le quedan 9 ingresos) \n>>> '))
-min = valor_inicial
-max = valor_inicial
-
-for i in range (9, 0, -1):
-  nuevo_valor = int(input(f'Ingrese un valor (le quedan {i -1} ingresos) \n>>> '))
-  if nuevo_valor < min:
-    min = nuevo_valor
-  elif nuevo_valor > max:
-    max = nuevo_valor
-
-print(f'El valor mínimo ingresado es de {min} y el valor máximo es de {max}')
-
-
-# - - - - - - - - - - - - -
-
-# Ejercicio 8 
-
-# Indicar por teclado cuántos números deben ingresarse, ingresarlos y luego calcular
-# la suma y multiplicación de los mismos.
-
-#%%
-
-numero_ingresos = int(input('Indique la cantidad de valores a ingresar \n>>> '))
-primer_ingreso = int(input('Ingrese el valor inicial'))
-suma = primer_ingreso
-multi = primer_ingreso
-
-for i in range(numero_ingresos - 1, 0, -1):
-  nuevo_ingreso = int(input(f'Ingrese otro valor (le quedan {i -1} ingresos \n>>> '))
-  suma += nuevo_ingreso
-  multi *= nuevo_ingreso
-
-print(f'La suma total es de {suma} y la multiplicación total es de {multi}')
-
-
-# - - - - - - - - - - - - -
-
-# Ejercicio 9
-
-# Ingresar por teclado usuario y contraseña. Debe indicar si el usuario ingresado es
-# correcto o no.
-
-#%%
-
-registeredUser = 'Ivan Consorte'
-registeredPassword = 'Open Sesame'
-
-user = input('Input a username \n>>> ')
-password = input('Input a password\n>>> ')
-
-if(user == registeredUser and password == registeredPassword):
-    print ('Login succesful')
-elif(user != registeredUser):
-    print ('The user doesn\'t exist')
-elif(user == registeredUser and password != registeredPassword):
-    print ('Incorrect password')
-else:
-    print ('Error')
-
-# - - - - - - - - - - - - -
-
-# Ejercicio 10
-
-# Realizar un programa que solicite números y finalice al ingresar un valor 0. Al
-# terminar indicar la sumatoria total.
-
-#%%
-
-valor = 1
-suma = 0
-while valor != 0:
-  valor = int(input('Ingrese un valor (este proceso finalizará cuando ingrese 0) \n>>> '))
-  suma += valor
-
-print(f'La suma total es de {suma}')
-
-# - - - - - - - - - - - - -
-
-# Ejercicio 11
-
-# Realizá un programa que permita ingresar el monto mensual de ventas realizadas
-# por un comercio durante el año (un ingreso por mes). A su vez ingresar gasto por
-# mes. Calcular:
-# a) Facturación anual
-# b) Ganancia mensual
-# c) Ganancia promedio
-
-#%%
-
-import calendar
-
-month_names = calendar.month_name[1:]
-
-facturación_anual = 0
-
-for month in month_names:
-  ventas_mes = round(float(input(f'Ingresar el monto de ventas del mes de {month} \n>>> ')), 2)
-  gastos_mes = round(float(input(f'Ingresar los gastos del mes de {month} \n>>> ')), 2)
-  ganancia_mensual = ventas_mes - gastos_mes
-  facturación_anual += ganancia_mensual
-  print(f'La ganancia del mes de {month} es de ${ganancia_mensual}')
-
-print(f'La facturación anual es de ${facturación_anual} y la ganancia promedio es de ${facturación_anual / 12}')
-
-
-# - - - - - - - - - - - - -
-
-# Ejercicio 12
-
-# Realizar una calculadora que permita ingresar dos valores y la operación a realizar y brinde el resultado en pantalla. El programa no finaliza.
-
-#%%  
-
-while True:
-  operación = input("Ingrese el tipo de operación \n>>> ")
-  valor1 = int(input("Ingrese el primer valor de la operación \n>>> "))
-  valor2 = int(input("Ingrese el segundo valor de la operación \n>>> "))  
-  resultado = 0 
-  
-  if(operación == "suma"):
-    resultado = valor1 + valor2
-  elif(operación == "resta"):
-    resultado = valor1 - valor2
-  elif(operación == "multiplicación"):
-    resultado = valor1 * valor2
-  elif(operación == "división"):
-    resultado = valor1 / valor2
+for i in range(1, 9):
+  if i < 5:
+    set1.add(i)
   else:
-    print('operación inválida')
+    set2.add(i)
 
-  print(f'El resultado de la {operación} es de {resultado}')
+print(set1.symmetric_difference(set2))
+print(set1.issubset(set2))
+print(set2.issuperset(set1))
+
+# - - - - - - - - - - - - - -
+
+# Ejercicio N° 7
+
+# Crea dos conjuntos llamados "set_a" y "set_b" con elementos en común.
+
+# Utiliza un método de conjuntos para eliminar los elementos comunes de set_a en relación con set_b.
+
+# Imprime en pantalla el conjunto resultante de set_a.
+# %%
+
+set_a = {1, 2, 3, 4, 5}
+
+set_b = {4, 5, 6, 7, 8}
+
+print(set_a.union(set_b))
+# %%
