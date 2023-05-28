@@ -38,6 +38,7 @@ def suma(n1, n2):
 
 print(suma(33, 66))
 print(suma(2, 1))
+print(suma(45, 51))
 
 # - - - - - - - - - - - - - - -
 
@@ -49,11 +50,11 @@ print(suma(2, 1))
 
 #%%
 
-def saludo_personalizado(nombre, saludo = '¡Hola'):
-  print(f"{saludo}, {nombre}!")
+def saludo_personalizado(nombre, saludo = 'Hola'):
+  print(f"¡{saludo}, {nombre}!")
 
 saludo_personalizado('Ivan')
-saludo_personalizado('Ivan', '¡Cómo estas')
+saludo_personalizado('Ivan', 'Cómo estas')
 
 # - - - - - - - - - - - - - - -
 
@@ -268,8 +269,13 @@ print(generar_mumero_aleatorio(45, 78))
 # %%
 
 def contar_lineas(archivo):
-  lista = archivo.readlines()
-  return len(lista)
+  with open(f'{archivo}') as f:
+    lines = f.readlines()
+    return len(lines)
+
+contar_lineas('guia1.py')
+contar_lineas('guia2.py')
+contar_lineas('guia3.py')
 
 # - - - - - - - - - - - - - - -
 

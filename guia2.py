@@ -1,4 +1,4 @@
-# Guía n° 2 - Tipos de datos
+# Guía n° 2 - Estructuras de datos
 
 # Listas
 
@@ -214,7 +214,7 @@ print(alumno["edad"])
 # Imprime en pantalla la información completa del alumno, incluyendo la nueva entrada.
 # %%
 
-alumno["universidad"] = 'asociacióno consciencia'
+alumno["universidad"] = 'asociación consciencia'
 
 print(alumno['universidad'])
 
@@ -494,7 +494,7 @@ print(numeros)
 # Muestra un mensaje en pantalla indicando si la letra es una vocal o no.
 # %%
 
-vocales = {"a", "b", "c", "d", "e"}
+vocales = {"a", "e", "i", "o", "u"}
 
 letra = input('Ingrese una letra \n>>> ')
 
@@ -535,7 +535,7 @@ print(numeros_repetidos)
 # Comprobar si set1 es un subconjunto de set2.
 
 # Comprobar si set2 es un subconjunto propio de set1.
-# %%
+#%%
 
 set1 = set()
 
@@ -568,3 +568,4 @@ set_b = {4, 5, 6, 7, 8}
 
 print(set_a.union(set_b))
 # %%
+
