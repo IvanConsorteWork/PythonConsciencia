@@ -147,4 +147,175 @@ pila.apilar(5)
 pila_revertida = revertir_pila(pila)
 print(pila_revertida.data)
 
+# - - - - - - - - - - - - - - - -
+
+# Ejercicio n°5
+
+# Implementar una cola básica:
+
+# Crea una clase llamada Cola que tenga los métodos agregar, quitar y esta_vacia.
+# La función agregar debe agregar un elemento al final de la cola.
+# La función quitar debe quitar y devolver el elemento en el frente de la cola.
+# La función esta_vacia debe devolver True si la cola está vacía, y False en caso contrario.
+#%%
+
+class Cola:
+  def __init__(self):
+    self.data = []
+  def agregar(self, item):
+    self.data.append(item)
+  def quitar(self):
+    return None if self.esta_vacia() else self.data.pop(0)
+  def esta_vacia(self):
+    return True if len(self.data) == 0 else False
+
+cola = Cola()
+print(cola.esta_vacia())
+cola.agregar(1)
+cola.agregar(2)
+cola.agregar(3)
+cola.agregar(4)
+cola.agregar(5)
+cola.agregar(6)
+print(cola.data)
+cola.quitar()
+print(cola.data)
+print(cola.esta_vacia())
+
+# - - - - - - - - - - - - - - - -
+
+# Ejercicio n°6
+
+# Implementar un simulador de atención de clientes:
+
+# Crea una clase llamada AtencionClientes que tenga los métodos nuevo_cliente, atender_cliente y esta_vacia.
+# La función nuevo_cliente debe agregar un cliente a la cola de atención.
+# La función atender_cliente debe quitar y devolver el siguiente cliente en la cola de atención.
+# La función esta_vacia debe devolver True si la cola de atención está vacía, y False en caso contrario.
 # %%
+
+class AtencionClientes:
+  def __init__(self):
+    self.data = []
+  def nuevo_cliente(self, item):
+    self.data.append(item)
+  def atender_cliente(self):
+    return None if self.esta_vacia() else self.data.pop(0)
+  def esta_vacia(self):
+    return True if len(self.data) == 0 else False
+
+simulador = AtencionClientes()
+print(simulador.esta_vacia())
+simulador.nuevo_cliente("Carlos Hernandez")
+simulador.nuevo_cliente("Jose Martinez")
+simulador.nuevo_cliente("Guadalupe Barrios")
+simulador.nuevo_cliente("Juan Ignacio Herrera")
+simulador.nuevo_cliente("Federico Guzman")
+simulador.nuevo_cliente("Gaston Moreno")
+print(simulador.data)
+cliente_atendido = simulador.atender_cliente()
+print(cliente_atendido)
+print(simulador.data)
+print(simulador.esta_vacia())
+  
+# - - - - - - - - - - - - - - - -
+
+# Ejercicio n°7
+
+# Implementar una cola de prioridad:
+
+# Crea una clase llamada ColaPrioridad que tenga los métodos agregar, quitar y esta_vacia.
+# La función agregar debe agregar un elemento a la cola de prioridad según su nivel de prioridad (mayor prioridad primero).
+# La función quitar debe quitar y devolver el elemento con mayor prioridad de la cola.
+# La función esta_vacia debe devolver True si la cola de prioridad está vacía, y False en caso contrario.
+# %%
+
+class ColaPrioridad:
+  def __init__(self):
+    self.data = []
+    self.max = 0
+  def agregar(self, item):
+    if self.esta_vacia():
+      self.data.append(item)
+      self.max = item
+    else:
+      for i in range (0, len(self.data)):
+        if item > self.max:
+          self.data.append(item)
+          self.max = item
+          break
+        elif item < self.data[i]:
+          self.data.insert(i, item)
+          break
+        
+  def quitar(self):
+    return None if self.esta_vacia() else self.data.pop(0)
+  def esta_vacia(self):
+    return True if len(self.data) == 0 else False
+
+cola = ColaPrioridad()
+print(cola.esta_vacia())
+cola.agregar(12)
+cola.agregar(32)
+cola.agregar(3)
+cola.agregar(74)
+cola.agregar(15)
+cola.agregar(26)
+print(cola.data)
+cola.quitar()
+print(cola.data)
+print(cola.esta_vacia())
+
+# - - - - - - - - - - - - - - - -
+
+# Ejercicio n°8
+
+# Implementar una cola de reproducción de música:
+
+# Crea una clase llamada ColaReproduccion que tenga los métodos agregar_cancion, reproducir_siguiente y mostrar_canciones_pendientes.
+# La función agregar_cancion debe agregar una canción a la cola de reproducción.
+# La función reproducir_siguiente debe quitar y reproducir la siguiente canción de la cola de reproducción.
+# La función mostrar_canciones_pendientes debe mostrar todas las canciones pendientes en orden sin modificar la cola.
+# %%
+
+class ColaReproduccion:
+  def __init__(self):
+    self.data = []
+  def agregar_canción(self, item):
+    self.data.append(item)
+  def reproducir_siguiente(self):
+    return None if len(self.data) == 0 else self.data.pop(0)
+  def mostrar_canciones_pendientes(self):
+    return None if len(self.data) == 0 else self.data
+
+cola = ColaReproduccion()
+print(cola.mostrar_canciones_pendientes())
+cola.agregar_canción('Blue Moon - Dizzy Gillespie')
+print(cola.mostrar_canciones_pendientes())
+cola.agregar_canción('Out of Nowhere - Charlie Parker')
+cola.agregar_canción('Wow - Lennie Tristano')
+print(cola.mostrar_canciones_pendientes())
+cola.reproducir_siguiente()
+print(cola.mostrar_canciones_pendientes())
+
+# - - - - - - - - - - - - - - - -
+
+# Ejercicio n°9
+
+# Implementar un sistema de impresión en cola:
+
+# Crea una clase llamada Impresora que tenga los métodos agregar_documento, imprimir_documento y mostrar_documentos_pendientes.
+# La función agregar_documento debe agregar un documento a la cola de impresión.
+# La función imprimir_documento debe quitar y mostrar el siguiente documento de la cola de impresión.
+# La función mostrar_documentos_pendientes debe mostrar todos los documentos pendientes en orden sin modificar la cola
+# %%
+
+class Impresora:
+  def __init__(self):
+    self.data = []
+  def agregar_documento(self, item):
+    self.data.append(item)
+  def imprimir_documento(self):
+    return None if len(self.data) == 0 else self.data.pop(0)
+  def mostrar_documentos_pendientes(self):
+    return None if len(self.data) == 0 else self.data
