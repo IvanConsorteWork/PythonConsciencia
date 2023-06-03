@@ -178,7 +178,7 @@ cola.agregar(4)
 cola.agregar(5)
 cola.agregar(6)
 print(cola.data)
-cola.quitar()
+print(cola.quitar())
 print(cola.data)
 print(cola.esta_vacia())
 
@@ -262,7 +262,7 @@ cola.agregar(74)
 cola.agregar(15)
 cola.agregar(26)
 print(cola.data)
-cola.quitar()
+print(cola.quitar())
 print(cola.data)
 print(cola.esta_vacia())
 
@@ -295,7 +295,7 @@ print(cola.mostrar_canciones_pendientes())
 cola.agregar_canción('Out of Nowhere - Charlie Parker')
 cola.agregar_canción('Wow - Lennie Tristano')
 print(cola.mostrar_canciones_pendientes())
-cola.reproducir_siguiente()
+print(cola.reproducir_siguiente())
 print(cola.mostrar_canciones_pendientes())
 
 # - - - - - - - - - - - - - - - -
@@ -319,3 +319,14 @@ class Impresora:
     return None if len(self.data) == 0 else self.data.pop(0)
   def mostrar_documentos_pendientes(self):
     return None if len(self.data) == 0 else self.data
+
+cola = Impresora()
+print(cola.mostrar_documentos_pendientes())
+cola.agregar_documento('Ensayo.txt')
+cola.agregar_documento('Resumen.text')
+cola.agregar_documento('Apuntes.txt')
+print(cola.mostrar_documentos_pendientes())
+print(cola.imprimir_documento())
+print(cola.mostrar_documentos_pendientes())
+
+# %%
