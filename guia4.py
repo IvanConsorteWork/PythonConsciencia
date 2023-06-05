@@ -63,11 +63,15 @@ class Pila:
 
 def verificar_balance(texto):
   pila = Pila()
+  
   for caracter in texto:
     if caracter == '(':
       pila.apilar(caracter)
-    elif caracter == ')':
+
+  for caracter in texto:
+    if caracter == ')':
       pila.desapilar()
+
   return pila.esta_vacia()
 #%%
 
