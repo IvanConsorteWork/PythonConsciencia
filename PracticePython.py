@@ -715,8 +715,15 @@ draw_game_board(4)
 
 # - - - - - - - - - - - - - - - - - - - - - - - - 
 
-# Exercise 24
+# Exercise 25
 
+# In a previous exercise, we’ve written a program that “knows” a number and asks a user to guess it.
+
+# This time, we’re going to do exactly the opposite. You, the user, will have in your head a number between 0 and 100. The program will guess a number, and you, the user, will say whether it is too high, too low, or your number.
+
+# At the end of this exchange, your program should print out how many guesses it took to get your number.
+
+# As the writer of this program, you will have to choose how your program will strategically guess. A naive strategy can be to simply start the guessing at 1, and keep going (2, 3, 4, etc.) until you hit the number. But that’s not an optimal guessing strategy. An alternate strategy might be to guess 50 (right in the middle of the range), and then increase / decrease by 1 as needed. After you’ve written the program, try to find the optimal strategy! (We’ll talk about what is the optimal one next week with the solution.)
 # %%
 
 import random
@@ -729,7 +736,77 @@ def guessing_number():
     computer_number = random.randint(0, 100)
     print(f'Is {computer_number}')
 
+# - - - - - - - - - - - - - - - - - - - - - - - - 
 
+# Exercise 26
 
+# This exercise is Part 2 of 4 of the Tic Tac Toe exercise series. The other exercises are: Part 1, Part 3, and Part 4.
+
+# As you may have guessed, we are trying to build up to a full tic-tac-toe board. However, this is significantly more than half an hour of coding, so we’re doing it in pieces.
+
+# Today, we will simply focus on checking whether someone has WON a game of Tic Tac Toe, not worrying about how the moves were made.
+
+# If a game of Tic Tac Toe is represented as a list of lists, like so:
+
+# game = [[1, 2, 0],
+# 	[2, 1, 0],
+# 	[2, 1, 1]]
+# where a 0 means an empty square, a 1 means that player 1 put their token in that space, and a 2 means that player 2 put their token in that space.
+
+# Your task this week: given a 3 by 3 list of lists that represents a Tic Tac Toe game board, tell me whether anyone has won, and tell me which player won, if any. A Tic Tac Toe win is 3 in a row - either in a row, a column, or a diagonal. Don’t worry about the case where TWO people have won - assume that in every board there will only be one winner.
+
+# Here are some more examples to work with:
+
+# winner_is_2 = [[2, 2, 0],
+# 	[2, 1, 0],
+# 	[2, 1, 1]]
+
+# winner_is_1 = [[1, 2, 0],
+# 	[2, 1, 0],
+# 	[2, 1, 1]]
+
+# winner_is_also_1 = [[0, 1, 0],
+# 	[2, 1, 0],
+# 	[2, 1, 1]]
+
+# no_winner = [[1, 2, 0],
+# 	[2, 1, 0],
+# 	[2, 1, 2]]
+
+# also_no_winner = [[1, 2, 0],
+# 	[2, 1, 0],
+# 	[2, 1, 0]]
 # %%
 
+def tictactoe_results(board):
+  if board[0][0] == board[2][0] and board[1][0] == board[2][0] and board[0][0] != 0:
+    return print(f'{str(board[0][0])} is the winner')
+  elif board[0][1] == board[2][1] and board[1][1] == board[2][1] and board[0][1] != 0:
+    return print(f'{str(board[0][1])} is the winner')
+  elif board[0][2] == board[2][2] and board[1][2] == board[2][2] and board[0][2] != 0:
+    return print(f'{str(board[0][2])} is the winner')
+  elif board[0][0] == board[0][2] and board[0][1] == board[0][2] and board[0][0] != 0:
+    return print(f'{str(board[0][0])} is the winner')
+  elif board[1][0] == board[1][2] and board[1][1] == board[1][2] and board[1][0] != 0:
+    return print(f'{str(board[1][0])} is the winner')
+  elif board[2][0] == board[2][2] and board[2][1] == board[2][2] and board[2][0] != 0:
+    return print(f'{str(board[2][0])} is the winner')  
+  elif board[0][0] == board[2][2] and board[1][1] == board[2][2] and board[0][0] != 0:
+    return print(f'{str(board[0][0])} is the winner')
+  elif board[0][2] == board[2][0] and board[1][1] == board[2][0] and board[0][2] != 0:
+    return print(f'{str(board[0][2])} is the winner')
+  else:
+    return print('Tie!')
+
+winner = [[2, 2, 0], [2, 1, 0], [2, 1, 1]]
+winner2 = [[1, 2, 0], [2, 1, 0], [2, 1, 1]]
+winner3 = [[0, 1, 0], [2, 1, 0], [2, 1, 1]]
+winner4 = [[1, 2, 0], [2, 1, 0], [2, 1, 2]]
+winner5 = [[0, 1, 2],[0, 1, 2],[0, 1, 2]]
+
+tictactoe_results(winner)
+tictactoe_results(winner2)
+tictactoe_results(winner3)
+tictactoe_results(winner4)
+tictactoe_results(winner5)
+# %%
